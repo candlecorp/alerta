@@ -23,7 +23,8 @@ WORKDIR /app
 RUN python -m pip install --upgrade pip && \
     pip install -r requirements.txt && \
     pip install -r requirements-ci.txt && \
-    pip install .
+    pip install . && \
+    pip install git+https://github.com/alerta/alerta-contrib.git#subdirectory=plugins/slack
 
 EXPOSE 8080
 ENV FLASK_SKIP_DOTENV=1
